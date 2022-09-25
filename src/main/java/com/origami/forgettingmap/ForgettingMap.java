@@ -60,8 +60,6 @@ public class ForgettingMap<K,V> {
         if (!valueMap.containsKey(key)) 
             if (valueMap.keySet().size() >= this.maxEntries) this.forgetValue();
             trackingMap.put(key, new ValueTracker<K>(key));
-
-        trackingMap.get(key).recordOperation();
         return valueMap.put(key, value);
     }
 
